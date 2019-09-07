@@ -21,7 +21,7 @@ $('#searchForm').submit(function(event){
     
     try {
         var searchTerm = $('#searchItem').val();
-        let searches = $.ajax({
+        $.ajax({
             type: 'GET',
             url: 'https://www.reddit.com/r/subreddits/search.json',
             data: {q: searchTerm},
