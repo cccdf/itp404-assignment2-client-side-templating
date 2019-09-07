@@ -23,11 +23,11 @@
     <div class="search">
       <a href="{{data.url}}">Title: {{data.title}}</a>
       <!-- <p>{{data.author}}</p> -->
-      <p>{{data.score}}</p>
-      <p>{{format data.subreddit_subscribers}}</p>
+      <p>Score: {{data.score}}</p>
+      <p>Subscribers: {{format data.subreddit_subscribers}}</p>
       <p>
         {{#if data.num_comments}}
-          {{format data.num_comments}}
+          Comments: {{format data.num_comments}}
         {{else}}
           No Comments
         {{/if}}
