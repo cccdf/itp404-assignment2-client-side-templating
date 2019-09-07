@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Week 1</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form method="get" action="" accept-charset="utf-8" class="search-form" id="searchForm">
+  <div class="search-form">
+    <input type="text" name="" id="searchItem" placeholder="enter key words" required>
+  </div>
+  <div class="search-form">
+    <input type="submit" value="Go!">
+  </div>
+</form>
+
+<div id="results"></div>
+<div id="loader" class="loader"></div>
+
+<template id="searches-template">
+  {{#each searches}}
+    <div class="search">
+      <a href="{{data.url}}">Title: {{data.title}}</a>
+      <!-- <p>{{data.author}}</p> -->
+      <p>{{data.score}}</p>
+      <p>{{format data.subreddit_subscribers}}</p>
+      <p>
+        {{#if data.num_comments}}
+          {{format data.num_comments}}
+        {{else}}
+          No Comments
+        {{/if}}
+      </p>
+    </div>
+  {{/each}}
+</template>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="handlebars-v4.1.2.js"></script>
+<script src="moment.js"></script>
+<script src="main.js"></script>
+
+
+</body>
+</html>
